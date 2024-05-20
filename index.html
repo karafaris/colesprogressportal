@@ -5,6 +5,32 @@
 </head>
 <body>
 	<h1>Cole's Construction Progress Portal</h1>
+		<form id="passcodeForm">
+		  <label for="passcode">Enter Passcode:</label>
+		  <input type="text" id="passcode" name="passcode">
+		  <button type="submit">Submit</button>
+		</form>
+		<div id="message"></div>
+	  
+		<script>
+		  const form = document.getElementById('passcodeForm');
+		  const passcodeInput = document.getElementById('passcode');
+		  const messageDiv = document.getElementById('message');
+	  
+		  form.addEventListener('submit', (event) => {
+			event.preventDefault();
+			const passcode = passcodeInput.value;
+			if (passcode === 'MapConstructKC2024') {
+			  messageDiv.textContent = 'Passcode accepted. Access granted.';
+			  messageDiv.style.color = 'green';
+			  // Redirect to the index.html page
+			  window.location.href = 'index.html';
+			} else {
+			  messageDiv.textContent = 'Incorrect passcode. Please try again.';
+			  messageDiv.style.color = 'red';
+			}
+		  });
+		</script>
 	<ul>
 		<li><a href="https://drive.google.com/drive/folders/1LC-f0HWx5oc_MC5wpm6maOHO_V8dyKc?usp=drive_link">Invoices</a></li>
 		<li><a href="https://drive.google.com/drive/folders/1LC-f0HWx5oc_MC5wpm6maOHO_V8dyKc?usp=drive_link">Photos/Videos</a></li>
