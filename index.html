@@ -1,52 +1,92 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Cole's Construction Progress Portal</title>
-	<style>
-		#protectedContent {
-			display: none;
-		}
-	</style>
+    <title>Cole's Construction Progress Portal</title>
+    <style>
+        #protectedContent {
+            display: none;
+        }
+        .header-image {
+            width: 10%;
+            height: auto;
+        }
+        .content-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .middle-image {
+            width: 25%; /* Shrunk to 50% of its original size (50% / 2) */
+            height: auto;
+            margin-right: 20px; /* Space between image and buttons */
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+        }
+        .button-link {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px 0;
+            font-size: 16px;
+            color: white;
+            background-color: #6a9bcf;
+            border: none;
+            border-radius: 4px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .button-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-	<h1>Cole's Construction Progress Portal</h1>
-	<form id="passcodeForm">
-		<label for="passcode">Enter Passcode:</label>
-		<input type="text" id="passcode" name="passcode">
-		<button type="submit">Submit</button>
-	</form>
-	<div id="message"></div>
+    <img src="C:\Users\karaf\bootcamp\colesprogressportal\assets\logo.jpg" alt="Header Image" class="header-image">
+    <h1>Cole's Construction Progress Portal</h1>
+    <form id="passcodeForm">
+        <label for="passcode">Enter Passcode:</label>
+        <input type="text" id="passcode" name="passcode">
+        <button type="submit">Submit</button>
+    </form>
+    <div id="message"></div>
+    
+    <div class="content-container">
+        <!-- Middle Image -->
+        <img src="C:\Users\karaf\bootcamp\colesprogressportal\assets\gayman.jpg" alt="Middle Image" class="middle-image">
 
-	<div id="protectedContent">
-		<ul>
-			<li><a href="https://drive.google.com/drive/folders/1N0yMOv9MkwJX7RgZ_hW9R6vROnSRioeS?usp=sharing">Invoices</a></li>
-			<li><a href="https://drive.google.com/drive/folders/1V5b6Odm1GCIRFCT-DApb65p9iOfjScRS?usp=sharing">Photos/Videos</a></li>
-			<li><a href="https://drive.google.com/drive/folders/17lfhXcHrzolFcRZ000wHKPWVZLwygeJd?usp=sharing">Permits</a></li>
-			<li><a href="https://drive.google.com/drive/folders/1rJEdUoewnvDYbrvFrfVoa_6taTYL7EJ_?usp=sharing">Renderings</a></li>
-			<li><a href="https://drive.google.com/drive/folders/11JG4KYtqKfK5H5RHDeugPUgo5WRDg67h?usp=sharing">Scope of Work</a></li>
-			<li><a href="https://drive.google.com/drive/folders/1nIf8tz9t6NtDjimiLSQdmfeQs065FDw5?usp=sharing">G703</a></li>
-		</ul>
-	</div>
+        <div class="button-container" id="protectedContent">
+            <button class="button-link" onclick="window.location.href='https://drive.google.com/drive/folders/1N0yMOv9MkwJX7RgZ_hW9R6vROnSRioeS?usp=sharing'">Payouts</button>
+            <button class="button-link" onclick="window.location.href='https://drive.google.com/drive/folders/1V5b6Odm1GCIRFCT-DApb65p9iOfjScRS?usp=sharing'">Photos/Videos</button>
+            <button class="button-link" onclick="window.location.href='https://drive.google.com/drive/folders/17lfhXcHrzolFcRZ000wHKPWVZLwygeJd?usp=sharing'">Permits</button>
+            <button class="button-link" onclick="window.location.href='https://drive.google.com/drive/folders/1rJEdUoewnvDYbrvFrfVoa_6taTYL7EJ_?usp=sharing'">Renderings</button>
+            <button class="button-link" onclick="window.location.href='https://drive.google.com/drive/folders/1nIf8tz9t6NtDjimiLSQdmfeQs065FDw5?usp=sharing'">Jobs and Progress</button>
+            <button class="button-link" onclick="window.location.href='https://drive.google.com/drive/folders/1nIf8tz9t6NtDjimiLSQdmfeQs065FDw5?usp=sharing'">G703</button>
+            <button class="button-link" onclick="window.location.href='https://drive.google.com/drive/folders/1Vt_MQ_7NMoBBkYneJJ170L9Ir-FccjXe?usp=sharing'">Receipts</button>
+        </div>
+    </div>
 
-	<script>
-		const form = document.getElementById('passcodeForm');
-		const passcodeInput = document.getElementById('passcode');
-		const messageDiv = document.getElementById('message');
-		const protectedContent = document.getElementById('protectedContent');
+    <script>
+        const form = document.getElementById('passcodeForm');
+        const passcodeInput = document.getElementById('passcode');
+        const messageDiv = document.getElementById('message');
+        const protectedContent = document.getElementById('protectedContent');
 
-		form.addEventListener('submit', (event) => {
-			event.preventDefault();
-			const passcode = passcodeInput.value;
-			if (passcode === 'MapConstructKC2024') {
-				messageDiv.textContent = 'Passcode accepted. Access granted.';
-				messageDiv.style.color = 'green';
-				protectedContent.style.display = 'block';
-			} else {
-				messageDiv.textContent = 'Incorrect passcode. Please try again.';
-				messageDiv.style.color = 'red';
-				protectedContent.style.display = 'none';
-			}
-		});
-	</script>
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const passcode = passcodeInput.value;
+            if (passcode === 'BeersandQueers') {
+                messageDiv.textContent = 'Passcode accepted. Access granted.';
+                messageDiv.style.color = 'green';
+                protectedContent.style.display = 'block';
+            } else {
+                messageDiv.textContent = 'Incorrect passcode. Please try again.';
+                messageDiv.style.color = 'red';
+                protectedContent.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
